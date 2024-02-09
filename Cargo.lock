@@ -31,14 +31,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hello-rust"
-version = "0.1.0"
-dependencies = [
- "ferris-says",
- "rand",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.153"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -100,6 +92,14 @@ checksum = "cd05616119e612a8041ef58f2b578906cc2531a6069047ae092cfb86a325d835"
 dependencies = [
  "smawk",
  "unicode-width",
+]
+
+[[package]]
+name = "the-rust-book"
+version = "0.1.0"
+dependencies = [
+ "ferris-says",
+ "rand",
 ]
 
 [[package]]
