@@ -7,6 +7,14 @@ impl Drop for WillDrop {
     }
 }
 
+#[derive(Debug)]
+struct User {
+    active: bool,
+    name: String,
+    email: String,
+    sign_in_count: u64,
+}
+
 fn main() {
     // 1. Ownership of Heap data
     //
@@ -66,7 +74,21 @@ fn main() {
 
     // Deconstructor: the drop implementation is ran when this owning scope ends
     let wd = WillDrop;
-    println!("made a WillDrop {:?}", wd);
+    println!("made a {:?}", wd);
+
+    let user1 = User {
+        name: String::from("Zach"),
+        email: String::from("zach@zach.com"),
+        active: true,
+        sign_in_count: 0,
+    };
+    let dupe = User {
+        email: String::from("other@zach.com"),
+        ..user1
+    };
+    // note that Struct fields that don't implement Copy, which makes creating new structs based on others follow the same borrowing rules as simpler variables: user1 as a whole is invalid now, except for the fields that can Copy since they moved into dupe
+    println!("dupe based on user1: {:?}", dupe);
+    println!("user1 is active? {:?}", user1.active);
 }
 
 fn make_copy(some_number: i32) {
