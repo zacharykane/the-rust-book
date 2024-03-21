@@ -96,7 +96,10 @@ fn make_copy(some_number: i32) {
 }
 
 fn take_ownership(some_string: String) {
+    // variable taken in from argument
+    // variable goes out of scope here when function ends
     println!("{}", some_string);
+    // caller no longer has access to given String
 }
 
 fn gives_ownership() -> String {

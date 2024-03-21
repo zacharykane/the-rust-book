@@ -6,8 +6,11 @@ pub fn run() {
     println!("{s1}");
 
     let s2 = "huh?";
+    // equivalent to s2.to_string()
     let mut s3 = String::from(s2);
-    s3.push_str("hey");
+    // push a String or &str
+    s3.push_str(" hey");
+    // push a char
     s3.push('X');
     println!("{s3} {s2}");
 

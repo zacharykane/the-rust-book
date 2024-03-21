@@ -100,14 +100,16 @@ fn main() {
     var2.call();
     var3.call();
 
+    // do something if var3 is this Variant
     if let Variant::Three { this, that } = var3 {
         println!("and a Three with: {}, {}", this, that);
     }
 }
 
+// can take any variant of the Choice enum
 fn accept(some_choice: Choice) {
     println!("{:?}", some_choice);
     if let Choice::TypeOne = some_choice {
-        println!("    whoa we got a One!");
+        println!("^ whoa we got a One!");
     }
 }
