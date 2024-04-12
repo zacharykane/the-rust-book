@@ -8,7 +8,7 @@ pub fn run() {
     }
     println!("{:?}", v);
 
-    // holding different types in one vector
+    // holding different types in one vector with Enums
     #[derive(Debug)]
     enum SpreadsheetCell {
         Int(i32),
